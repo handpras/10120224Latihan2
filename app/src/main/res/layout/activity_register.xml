@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_header"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_header_back"
+            android:layout_marginStart="22dp"
+            app:layout_constraintBottom_toBottomOf="@id/header"
+            app:layout_constraintStart_toStartOf="@id/header"
+            app:layout_constraintTop_toTopOf="@id/header" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="24dp">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_register"
+            android:hint="@string/username"
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/gray_register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_register"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/gray_register"
+            app:layout_constraintTop_toBottomOf="@id/username" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_register"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/gray_register"
+            app:layout_constraintTop_toBottomOf="@id/email" />
+
+        <RadioGroup
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/phone"
+            app:layout_constraintStart_toStartOf="@id/phone"
+            app:layout_constraintTop_toBottomOf="@id/phone">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="130dp"
+                android:buttonTint="@color/blue_background"
+                android:text="@string/male"
+                android:textColor="@color/gray_register"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:textColor="@color/gray_register"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/gen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/gender">
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/gray_register"
+                android:entries="@array/bloodtype"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/gray_register"
+                android:entries="@array/reshus"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/gray_register"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/gray_register"
+            app:layout_constraintTop_toBottomOf="@id/gen" />
+
+        <EditText
+            android:id="@+id/retype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_register"
+            android:hint="@string/repass"
+            android:inputType="textPassword"
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/gray_register"
+            app:layout_constraintTop_toBottomOf="@id/password" />
+
+        <RadioGroup
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/retype"
+            app:layout_constraintStart_toStartOf="@id/retype"
+            app:layout_constraintTop_toBottomOf="@id/retype">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="90dp"
+                android:buttonTint="@color/blue_background"
+                android:text="@string/personal"
+                android:textColor="@color/gray_register"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/org"
+                android:textColor="@color/gray_register"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/gray_register"
+            android:entries="@array/job_array"
+            app:layout_constraintTop_toBottomOf="@id/type"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/gray_register"
+            android:hint="@string/home_address"
+            android:inputType="text"
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/gray_register"
+            app:layout_constraintTop_toBottomOf="@id/job" />
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_register"
+            android:drawableEnd="@drawable/ic_blood_needed_location"
+            android:hint="@string/default_location"
+            android:inputType="text"
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/gray_register"
+            app:layout_constraintTop_toBottomOf="@id/home" />
+
+        <CheckBox
+            android:id="@+id/agreement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/blue_background"
+            android:text="@string/terms_condition"
+            android:textColor="@color/gray_register"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/location"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="28dp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_outline_blue"
+            android:onClick="btnRegister"
+            android:padding="10dp"
+            android:text="@string/register"
+            android:textColor="@color/blue_background"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/agreement" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
